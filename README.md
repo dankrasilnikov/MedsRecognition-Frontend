@@ -165,8 +165,8 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 For questions or feedback, please reach out to:
 
-**UI Author**: Daniil Krasilnikov  
-**UI Author Email**: [krasilnikov.orchid@gmail.com](mailto:krasilnikov.orchid@gmail.com)
+**Frontend Author**: Daniil Krasilnikov  
+**Frontend Author Email**: [krasilnikov.orchid@gmail.com](mailto:krasilnikov.orchid@gmail.com)
 **Idea Author Email**: [svetlana.perekrestova2@gmail.com](mailto:svetlana.perekrestova2@gmail.com)
 **GitHub**: [SPerekrestova/medsrecognition-frontend](https://github.com/SPerekrestova/medsrecognition-frontend)
 
