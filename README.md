@@ -25,11 +25,7 @@
    - Supports image scanning and displays results retrieved from backend services.
 2. **Cross-Platform Support**
    - Built with Expo for native performance on Android, iOS, and the web.
-3. **Seamless Navigation**
-   - Uses Expo Router for intuitive, multi-screen navigation.
-4. **State Management and API Integration**
-   - Utilizes libraries like Zustand and React Query to manage state and handle API data.
-5. **Docker Support**
+3. **Docker Support**
    - Provides Docker configurations for a consistent, reproducible development environment.
 
 ## Project Structure
