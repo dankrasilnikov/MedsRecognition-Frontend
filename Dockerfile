@@ -1,10 +1,10 @@
-FROM node:16-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install -g expo-cli && npm install
+RUN npm install -g expo-cli && npm install -g typescript && npm install
 
 COPY . .
 
