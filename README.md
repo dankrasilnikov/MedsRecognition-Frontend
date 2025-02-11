@@ -1,7 +1,3 @@
-Below is a complete README template for your Expo-based MedsRecognition Frontend application. This document explains the project’s purpose, outlines the folder structure, describes local and Docker-based development workflows, and provides contribution guidelines.
-
----
-
 # MedsRecognition Frontend
 
 ## Overview
