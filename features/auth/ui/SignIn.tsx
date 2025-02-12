@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Dimensions, Platform, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { useUserStore } from '$entities/user';
-import { signUpWithPassword } from '$features/auth/api/authApi';
+import { signInWithPassword, signUpWithPassword } from '$features/auth/api/authApi';
 import { AuthButton } from '$shared/ui/AuthButton';
 import { AuthInput } from '$shared/ui/Authinput';
 
@@ -19,11 +19,13 @@ export const SignIn = () => {
   };
 
   const onPasswordAuth = async () => {
-    if (type === 'Sign In') return await signIn(email, password);
+    if (type === 'Sign In') return await signInWithPassword(email, password);
     return await signUpWithPassword(email, password);
   };
 
-  const onSimpleSignIn = async () => {};
+  const onSimpleSignIn = async () => {
+
+  };
 
   const handleForgotPassword = () => {};
 
@@ -61,26 +63,6 @@ export const SignIn = () => {
 
         <AuthButton label={type} onPress={onPasswordAuth} />
 
-        <Text style={styles.authOptionsLabel}>Or continue with</Text>
-
-        <View style={styles.authOptions}>
-          <AuthButton
-            label={'Google'}
-            onPress={onSimpleSignIn}
-            backgroundColor={'#F9FAFB'}
-            color={'#1F2937'}
-            width={'47%'}
-            borderColor={'#EBEDF0'}
-          />
-          <AuthButton
-            label={'Apple'}
-            onPress={onSimpleSignIn}
-            backgroundColor={'#F9FAFB'}
-            color={'#1F2937'}
-            width={'47%'}
-            borderColor={'#EBEDF0'}
-          />
-        </View>
       </View>
     </View>
   );

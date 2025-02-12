@@ -13,13 +13,18 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dankrasilnikov.MedsRecognitionFrontend",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.dankrasilnikov.MedsRecognitionFrontend"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +38,11 @@
           "organization": "self-emloyeed"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "9927a145-bb4d-4dfb-933c-1d70387d4f3c"
+      }
+    }
   }
 }
