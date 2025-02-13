@@ -30,7 +30,7 @@ export default function App() {
     // fetchUser();
   }, []);
 
-  // return <Dashboard />;
+  return <Dashboard />;
 
   if(isLoading) {
     return <GreetingPage/>

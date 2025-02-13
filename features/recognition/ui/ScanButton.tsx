@@ -1,74 +1,40 @@
-import React, { useEffect, useRef } from 'react';
-import { Animated, Image, Pressable, StyleSheet, Text } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Button } from '$shared/ui/Button';
+import AddIcon from '$assets/add.svg';
 
 type Props = {
   onPress: any;
 };
 
 export const ScanButton = ({ onPress }: Props) => {
-  const animation = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    const startJumpAnimation = () => {
-      Animated.sequence([
-        Animated.timing(animation, {
-          toValue: -10, // Jump up
-          duration: 300,
-          useNativeDriver: true,
-        }),
-        Animated.timing(animation, {
-          toValue: 0, // Back to initial position
-          duration: 300,
-          useNativeDriver: true,
-        }),
-        Animated.timing(animation, {
-          toValue: -10, // Second jump up
-          duration: 300,
-          useNativeDriver: true,
-        }),
-        Animated.timing(animation, {
-          toValue: 0, // Back to initial position
-          duration: 300,
-          useNativeDriver: true,
-        }),
-      ]).start();
-    };
-
-    startJumpAnimation();
-  }, [animation]);
-
   return (
-    <Pressable onPress={onPress} style={styles.buttonWrapper}>
-      <Animated.View style={[styles.button, { transform: [{ translateY: animation }] }]}>
-        <Image style={styles.icon} source={require('$assets/scan.png')} />
-        <Text style={styles.label}>Scan</Text>
-      </Animated.View>
-    </Pressable>
+    <Button onPress={onPress}>
+      <View style={styles.buttonContentWrapper}>
+        <AddIcon width={30} height={30} />
+        <Text style={styles.label}>Add medication</Text>
+      </View>
+    </Button>
   );
 };
 
 const styles = StyleSheet.create({
-  button: {
-    borderRadius: 8,
-    backgroundColor: '#0873bb',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 7,
-    paddingVertical: 3,
-    zIndex: 1000,
-  },
   buttonWrapper: {
     position: 'absolute',
     bottom: 10,
     right: 10,
   },
   label: {
-    fontSize: 24,
+    fontSize: 16,
     color: '#ffffff',
+    fontWeight: 'bold',
   },
-  icon: {
-    width: 40,
-    height: 40,
+  buttonContentWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    flexDirection: 'row',
+    gap: 7,
   },
 });

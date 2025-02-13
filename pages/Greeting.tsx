@@ -39,7 +39,7 @@ export const GreetingPage = () => {
           <View style={styles.logoContainer}>
             <Pills style={styles.logo} />
           </View>
-          <Text style={styles.h1}>MediScan AI</Text>
+          <Text style={styles.h1}>MedsRecognition</Text>
           <Text style={styles.p}>Identify Medications, Stay Safe</Text>
           <ProgressBar progress={progress} style={styles.progressBar} />
         </ScrollView>
