@@ -10,6 +10,8 @@ import { CameraModal } from '$features/recognition/ui/CameraModal';
 import { ErrorModal } from '$features/recognition/ui/ErrorModal';
 import { RecognitionModal } from '$features/recognition/ui/RecognitionModal';
 import { ScanButton } from '$features/recognition/ui/ScanButton';
+import { PageWrapper } from '$pages/ui/PageWrapper';
+import { BoxShadow } from '$shared/ui/BoxShadow';
 
 export const Dashboard = () => {
   const [hasPermission, setHasPermission] = useState(false);
@@ -56,12 +58,12 @@ export const Dashboard = () => {
     setCameraVisible(false);
   };
 
-  const renderItem = ({ item }: { item: any }) => (
+  const renderMedication = ({ item }: { item: any }) => (
     <MedicationsListItem item={item} setItemData={setItemData} />
   );
 
   return (
-    <View style={styles.wrapper}>
+    <PageWrapper>
       <CameraModal
         loading={loading}
         visible={cameraVisible}
@@ -77,6 +79,7 @@ export const Dashboard = () => {
       />
       <ErrorModal visible={errorModalVisible} setModal={setErrorModalVisible} />
       <MedicationsModal visible={!!itemData} item={itemData} onClose={() => setItemData(null)} />
+
       {permissionLoading ? (
         <View style={styles.state}>
           <ActivityIndicator size='large' color='#0873bb' />
@@ -95,15 +98,33 @@ export const Dashboard = () => {
           <FlatList
             data={medications}
             keyExtractor={(item) => item.id}
-            renderItem={renderItem}
+            renderItem={renderMedication}
             initialNumToRender={10}
             maxToRenderPerBatch={20}
             windowSize={5}
           />
         </View>
       )}
+      <BoxShadow>
+        <View style={{ backgroundColor: '#fff', padding: 16 }}>
+          <Text>Lisinopril</Text>
+          <Text>10mg tablet • Take once daily</Text>
+        </View>
+      </BoxShadow>
+      <BoxShadow>
+        <View style={{ backgroundColor: '#fff', padding: 16 }}>
+          <Text>Lisinopril</Text>
+          <Text>10mg tablet • Take once daily</Text>
+        </View>
+      </BoxShadow>
+      <BoxShadow>
+        <View style={{ backgroundColor: '#fff', padding: 16 }}>
+          <Text>Lisinopril</Text>
+          <Text>10mg tablet • Take once daily</Text>
+        </View>
+      </BoxShadow>
       <ScanButton onPress={openCamera} />
-    </View>
+    </PageWrapper>
   );
 };
 
@@ -111,12 +132,6 @@ const styles = StyleSheet.create({
   list: {
     position: 'relative',
     marginTop: 10,
-  },
-  wrapper: {
-    flex: 1,
-    position: 'relative',
-    backgroundColor: '#fff',
-    padding: 16,
   },
   state: {
     flex: 1,

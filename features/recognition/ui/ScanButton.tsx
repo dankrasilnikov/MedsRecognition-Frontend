@@ -7,9 +7,9 @@ type Props = {
   onPress: any;
 };
 
-export const ScanButton = ({ onPress }: Props) => {
+export const ScanButton = (props: Props) => {
   return (
-    <Button onPress={onPress}>
+    <Button {...props}>
       <View style={styles.buttonContentWrapper}>
         <AddIcon width={30} height={30} />
         <Text style={styles.label}>Add medication</Text>
@@ -21,8 +21,8 @@ export const ScanButton = ({ onPress }: Props) => {
 const styles = StyleSheet.create({
   buttonWrapper: {
     position: 'absolute',
-    bottom: 10,
-    right: 10,
+    bottom: 0,
+    right: 0,
   },
   label: {
     fontSize: 16,
