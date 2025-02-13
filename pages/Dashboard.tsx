@@ -63,7 +63,7 @@ export const Dashboard = () => {
   );
 
   return (
-    <PageWrapper>
+    <PageWrapper pageTitle={'Medications'} settings={true} onBackPress={() => console.log('back')}>
       <CameraModal
         loading={loading}
         visible={cameraVisible}

@@ -10,7 +10,7 @@ type Props = {
   title: string;
 };
 
-export const Header = ({ settings = true, onBackPress, title }: Props) => {
+export const Header = ({ settings = false, onBackPress, title }: Props) => {
   return (
     <BoxShadow>
       <View style={styles.header}>
