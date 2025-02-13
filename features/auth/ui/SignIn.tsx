@@ -3,8 +3,8 @@ import { Dimensions, Platform, Pressable, StyleSheet, Text, TouchableOpacity, Vi
 
 import { useUserStore } from '$entities/user';
 import { signInWithPassword, signUpWithPassword } from '$features/auth/api/authApi';
-import { AuthButton } from '$shared/ui/AuthButton';
-import { AuthInput } from '$shared/ui/Authinput';
+import { Button } from '$shared/ui/Button';
+import { Input } from '$shared/ui/Input';
 
 export const SignIn = () => {
   const [email, onChangeEmail] = useState<string>('');
@@ -41,13 +41,13 @@ export const SignIn = () => {
       </View>
 
       <View style={styles.authContainer}>
-        <AuthInput
+        <Input
           value={email}
           onChange={onChangeEmail}
           label={'Email'}
           placeholder={'Enter your email'}
         />
-        <AuthInput
+        <Input
           type={'password'}
           value={password}
           onChange={onChangePassword}
@@ -61,7 +61,9 @@ export const SignIn = () => {
           </Pressable>
         </View>
 
-        <AuthButton label={type} onPress={onPasswordAuth} />
+        <Button onPress={onPasswordAuth} >
+          <Text style={styles.buttonText}>{type}</Text>
+        </Button>
 
       </View>
     </View>
@@ -73,6 +75,12 @@ const { height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     marginTop: height * 0.03,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: "#fff"
   },
   select: {
     fontSize: 20,

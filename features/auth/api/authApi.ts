@@ -21,7 +21,6 @@ export const signInWithPassword = async (email: string, password: string) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        csrfmiddlewaretoken:'9Jydn1F1UdJCiksslJ496ef2DtskNASaFqvLSv2B2KxGBK4M6B7tFXgOxPWt0ri1',
         email,
         password,
       }),

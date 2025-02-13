@@ -1,6 +1,7 @@
-import { Dimensions, Image, Platform, ScrollView, StyleSheet, View, Text } from 'react-native';
+import { Dimensions, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Pills from '../assets/pills.svg';
 import { SignIn } from '$features/auth/ui/SignIn';
+import { BottomLabel } from '$shared/ui/BottomLabel';
 
 export const AuthPage = () => {
   return (
@@ -9,10 +10,10 @@ export const AuthPage = () => {
         <View style={styles.logoContainer}>
           <Pills style={styles.logo} width={50} height={50} />
         </View>
-        <Text style={styles.h1}>MediScan AI</Text>
+        <Text style={styles.h1}>MedsRecognition</Text>
         <Text style={styles.p}>Your AI-powered medication assistant</Text>
         <SignIn />
-        <Text style={styles.securityMessage}>Your data is kept private and secure</Text>
+        <BottomLabel>Your data is kept private and secure</BottomLabel>
       </ScrollView>
     </View>
   );
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#3B82F6',
     marginHorizontal: 'auto',
     marginBottom: 0,
-    borderRadius: 12
+    borderRadius: 12,
   },
   logo: {
     aspectRatio: '1/1',
@@ -63,5 +64,5 @@ const styles = StyleSheet.create({
     color: '#737D8B',
     marginVertical: 16,
     textAlign: 'center',
-  }
+  },
 });
