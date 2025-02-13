@@ -18,7 +18,7 @@ export const Header = ({ settings = true, onBackPress, title }: Props) => {
           <ArrowIcon width={23} height={16} />
         </Pressable>
 
-        <Text style={styles.title}>Header</Text>
+        <Text style={styles.title}>{title}</Text>
 
         <Pressable onPress={onBackPress} style={[styles.button, { right: 26 }]}>
           {settings ? <SettingsIcon width={31} height={31} /> : null}
